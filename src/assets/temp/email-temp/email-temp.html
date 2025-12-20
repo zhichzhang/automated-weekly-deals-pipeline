@@ -1,0 +1,82 @@
+<!--<html>-->
+<!--<body style="background-color:#F4FBF8; font-family:Arial, sans-serif; margin:0; padding:0;">-->
+
+<!--&lt;!&ndash; Branded Header &ndash;&gt;-->
+<!--<header style="background-color:#0FB872; color:white; padding:16px 24px;">-->
+<!--    <h1 style="margin:0; font-size:20px;">Prox</h1>-->
+<!--    <p style="margin:4px 0 0; font-size:14px;">-->
+<!--        Your weekly deals, sorted by savings-->
+<!--    </p>-->
+<!--</header>-->
+
+<!--<main style="padding:24px;">-->
+<!--    {{#each retailers}}-->
+<!--    <h2 style="color:#0FB872; margin-bottom:8px;">-->
+<!--        {{name}}-->
+<!--    </h2>-->
+<!--    <ul style="padding-left:16px; margin-top:0;">-->
+<!--        {{#each deals}}-->
+<!--        <li style="margin-bottom:6px; font-size:14px;">-->
+<!--            <strong>{{product}}</strong>-->
+<!--            {{#if size}} ({{size}}){{/if}}-->
+<!--            — ${{price}}-->
+<!--            <span style="color:#666;">-->
+<!--                ({{start_date}} – {{end_date}})-->
+<!--              </span>-->
+<!--        </li>-->
+<!--        {{/each}}-->
+<!--    </ul>-->
+<!--    {{/each}}-->
+<!--</main>-->
+
+<!--&lt;!&ndash; Footer &ndash;&gt;-->
+<!--<footer style="padding:16px 24px; font-size:12px; color:#666;">-->
+<!--    <p style="margin:0;">-->
+<!--        <a href="#" style="color:#0FB872; text-decoration:none;">-->
+<!--            Manage preferences-->
+<!--        </a>-->
+<!--    </p>-->
+<!--    <p style="color:#333;">-->
+<!--        If you cannot view this email properly, you can view it in plain text.-->
+<!--    </p>-->
+<!--</footer>-->
+
+<!--</body>-->
+<!--</html>-->
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Prox</h1>
+    <p>Your weekly deals, sorted by savings</p>
+</header>
+
+<main>
+    {{#each retailers}}
+    <h2>{{name}}</h2>
+    <ul>
+        {{#each deals}}
+        <li>
+            <strong>{{product}}</strong>
+            {{#if size}} ({{size}}){{/if}}
+            — ${{price}}
+            <span>({{start_date}} – {{end_date}})</span>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+</main>
+
+<footer>
+    <p>
+        <a href="#">Manage preferences</a>
+    </p>
+    <p>If you cannot view this email properly, you can view it in plain text.</p>
+</footer>
+
+</body>
+</html>
