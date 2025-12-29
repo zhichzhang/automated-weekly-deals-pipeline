@@ -94,11 +94,11 @@ The rules are simple:
 ### ingestData()
 - Upsert users
 - For each deal in JSON:
-- Ensure retailer exists
-- Ensure product exists
-- Insert deal (idempotent)
-- Only insert deals relevant to at least one user
-  Uses in‑memory maps to avoid redundant DB lookups.
+  - Ensure retailer exists
+  - Ensure product exists
+  - Insert deal (idempotent)
+  - Only insert deals relevant to at least one user 
+  - Uses in‑memory maps to avoid redundant DB lookups.
 ### sendEmails()
 - Fetch all users
 - For each user:
@@ -163,38 +163,24 @@ This project provides a complete, production‑ready pipeline for:
 - It is modular, typed, idempotent, and easy to extend.
 
 ## If Given 2 More Days — What I’d Build Next
-1. Production‑Ready Scheduling & Automation
-- Set up a reliable weekly trigger using:
-- GitHub Actions
-- Supabase Scheduled Functions
-- or a lightweight cron job on a server
-- Add logging + alerting so failures are surfaced immediately.
-2. Admin Dashboard (Minimal Viable UI)
-   A small web interface to:
-- Upload new deal data
-- View ingestion logs
-- Preview the next email batch
-- Trigger manual re‑runs
-  This dramatically improves maintainability.
-3. Improved Email Personalization
-   Enhance the email content with:
-- User‑specific product categories
-- “New this week” vs “Returning deals”
-- Better grouping + sorting logic
-- Optional unsubscribe / preference center
-4. Data Quality & Validation Layer
-     Before ingestion:
-- Validate JSON structure
-- Detect duplicate deals
-- Normalize retailer/product names
-- Add warnings for missing fields
-  This prevents bad data from polluting the database.
-5. Optional: Move to Real‑Time Deal Sources
-   If time allows:
-- Add ingestion from APIs instead of static JSON
-- Support multiple data providers
-- Add a queue-based ingestion pipeline (e.g., using Supabase Functions)
+### 1. Production‑Ready Scheduling & Automation
+- Set up a reliable weekly trigger using **GitHub Actions**, **Supabase Scheduled Functions**, or a lightweight **cron job**.
+- Integrate **Kafka** for queue-based processing to handle large-scale data efficiently.
+- Use **Redis** to cache frequently accessed deal and user data, reducing latency.
+- Containerize the entire pipeline with **Docker** for consistent deployment across environments.
+- Add **logging and alerting** so failures are surfaced immediately.
 
+### 2. Admin Dashboard (Minimal Viable UI)
+- A simple web interface to:
+    - Upload new deal data
+    - View ingestion logs
+    - Preview the next email batch
+    - Trigger manual re-runs
+- Improves maintainability and operational efficiency.
 
-
-
+### 3. Improved Email Personalization
+- Enhance email content with:
+    - User-specific product categories
+    - “New this week” vs. “Returning deals”
+    - Better grouping and sorting logic
+    - Optional unsubscribe or preference center
