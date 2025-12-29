@@ -5,7 +5,6 @@ This project implements a full workflow that:
 - Normalizes and upserts the data into a Supabase Postgres database
 - Generates personalized weekly deal emails using Handlebars templates
 - Sends emails to users via the Resend API
-  It is designed for scheduled weekly execution (e.g., via cron, GitHub Actions, or Supabase Edge Functions).
 
 ## Features
 1. Data Ingestion
