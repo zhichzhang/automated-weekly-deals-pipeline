@@ -1,4 +1,4 @@
-# Weekly Deals Pipeline
+# Automated Weekly Deals Pipeline
 ## Automated Data Ingestion + Personalized Email Delivery (Supabase + Node.js)
 This project implements a full workflow that:
 - Ingests product deals and user preferences from JSON files
